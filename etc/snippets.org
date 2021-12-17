@@ -951,8 +951,19 @@
   #+END_SRC
 
 * js-mode
+  Snippets shared between JavaScript and TypeScript are put into ~js-base-mode~, and
+  should be inherited by TypeScript.
+
+  #+BEGIN_SRC text :tangle snippets/js-mode/.yas-parents :shebang
+    js-base-mode
+  #+END_SRC
+
+  #+BEGIN_SRC text :tangle snippets/typescript-mode/.yas-parents :shebang
+    js-base-mode
+  #+END_SRC
+
 ** bnd
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/bnd
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/bnd
       # uuid: 6788dcb5-8d8e-4e30-a97b-83029ecaf89b
       # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
       # name: bindThis
@@ -963,7 +974,7 @@
    #+END_SRC
 
 ** debugger
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/debugger
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/debugger
       # name: debugger
       # key: dbg
       # --
@@ -971,7 +982,7 @@
    #+END_SRC
 
 ** imd
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/imd
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/imd
       # uuid: 851254b3-d70e-4024-a557-2629d3d73507
       # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
       # name: importDestructing
@@ -982,11 +993,11 @@
    #+END_SRC
 
 ** console
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/console/.yas-make-group :shebang
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/.yas-make-group :shebang
    #+END_SRC
 
 *** cin
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cin
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cin
        # uuid: 006ec5e1-f229-4989-b8b2-fe1da1aab907
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.info
@@ -998,7 +1009,7 @@
     #+END_SRC
 
 *** cco
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cco
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cco
        # uuid: dcbcd0f7-7827-4f81-9777-809540ef5c10
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.count
@@ -1010,7 +1021,7 @@
     #+END_SRC
 
 *** cas
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cas
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cas
        # uuid: b845ab40-1e04-4d11-bb0c-14266e733945
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.assert
@@ -1022,7 +1033,7 @@
     #+END_SRC
 
 *** cge
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cge
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cge
        # uuid: b3954656-b9c0-4061-b436-e7412ce008ad
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.groupEnd
@@ -1034,7 +1045,7 @@
     #+END_SRC
 
 *** cte
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cte
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cte
        # uuid: 9dd0d1c8-f4e8-4d16-8ca1-4ce72e7936cb
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.timeEnd
@@ -1046,7 +1057,7 @@
     #+END_SRC
 
 *** cdi
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cdi
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cdi
        # uuid: d2272fe8-85d4-44f5-b74c-39a88bb50487
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.dir
@@ -1058,7 +1069,7 @@
     #+END_SRC
 
 *** cer
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cer
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cer
        # uuid: 54ad9659-8b18-40a0-9096-48131f9577da
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.error
@@ -1070,7 +1081,7 @@
     #+END_SRC
 
 *** clo
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/clo
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/clo
        # uuid: 3d2ddcac-d8c0-4b56-81a7-523eb6621442
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.log (formatted)
@@ -1082,7 +1093,7 @@
     #+END_SRC
 
 *** cgr
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cgr
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cgr
        # uuid: afebe290-f0e6-403a-9c4f-da33451115cb
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.group
@@ -1094,7 +1105,7 @@
     #+END_SRC
 
 *** cwa
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/cwa
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/cwa
        # uuid: 3d8fde97-df25-4515-a8e9-5096db21cfb7
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.warn
@@ -1106,7 +1117,7 @@
     #+END_SRC
 
 *** ccl
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/ccl
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/ccl
        # uuid: 9619a671-e44a-4b59-b343-b55b3b1dbbcc
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.clear
@@ -1118,7 +1129,7 @@
     #+END_SRC
 
 *** clg
-    #+BEGIN_SRC snippet :tangle snippets/js-mode/console/clg
+    #+BEGIN_SRC snippet :tangle snippets/js-base-mode/console/clg
        # uuid: 0a1a6d75-a8e0-43fe-b049-1e96c2e04b51
        # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
        # name: console.log
@@ -1130,7 +1141,7 @@
     #+END_SRC
 
 ** ima
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/ima
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/ima
       # uuid: 7c3ddd59-68e7-456c-a906-4241cdaeaf9e
       # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
       # name: importAs
@@ -1141,7 +1152,7 @@
    #+END_SRC
 
 ** imn
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/imn
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/imn
       # uuid: 39b0065c-1dd5-4214-a612-1fead18dd677
       # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
       # name: importNoModuleName
@@ -1152,7 +1163,7 @@
    #+END_SRC
 
 ** imp
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/imp
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/imp
       # uuid: fb07fe1d-4cf7-47e9-bca8-51a6438c5d6f
       # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
       # name: import
@@ -1163,7 +1174,7 @@
    #+END_SRC
 
 ** ime
-   #+BEGIN_SRC snippet :tangle snippets/js-mode/ime
+   #+BEGIN_SRC snippet :tangle snippets/js-base-mode/ime
       # uuid: 13efbfa8-12d3-4570-9602-6d64717d75e3
       # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
       # name: importEverything
@@ -1174,25 +1185,85 @@
    #+END_SRC
 
 ** function
-   #+begin_src snippet :tangle snippets/js-mode/function
+   #+begin_src snippet :tangle snippets/js-base-mode/function
      # name: function
      # contributor: Mohsin Kaleem <mohkale@kisara.moe>
-     # key: def
+     # key: fun
      # --
      function ${1:name}(${2:params}) {
          $0
      }
    #+end_src
 
-* js2-mode
-  #+BEGIN_SRC text :tangle snippets/js2-mode/.yas-parent :shebang
-    js-mode
-  #+END_SRC
+   #+begin_src snippet :tangle snippets/typescript-mode/function
+     # name: function
+     # contributor: Mohsin Kaleem <mohkale@kisara.moe>
+     # key: fun
+     # --
+     function ${1:name}(${2:params}): ${3:void} {
+         $0
+     }
+   #+end_src
 
-* typescript-mode
-  #+BEGIN_SRC text :tangle snippets/typescript-mode/.yas-parents :shebang
-    js-mode
-  #+END_SRC
+** anonymous-function
+   #+begin_src snippet :tangle snippets/js-mode/anonymous-function
+     # name: annonymous-function
+     # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
+     # key: def
+     # --
+     (${1:params}) => {
+       $0
+     }
+   #+end_src
+
+   #+begin_src snippet :tangle snippets/typescript-mode/anonymous-function
+     # name: annonymous-function
+     # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
+     # key: def
+     # --
+     (${1:params}): ${2:void} => {
+       $0
+     }
+   #+end_src
+
+** forIn
+   #+begin_src snippet :tangle snippets/js-base-mode/forIn
+     # -*- mode: snippet -*-
+     # uuid: 8d343f0b-28ae-4e2c-84a4-2e557603f28b
+     # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
+     # name: forIn
+     # key: fin
+     # --
+     for (let ${1:item} in ${2:object}) {
+         $0
+     }
+   #+end_src
+
+** forOf
+   #+begin_src snippet :tangle snippets/js-base-mode/forOf
+     # -*- mode: snippet -*-
+     # uuid: eec73b34-fb19-4d4c-b4fd-853b2eca6f19
+     # contributor: Jimmy Yuen Ho Wong <wyuenho@gmail.com>
+     # name: forOf
+     # key: fof
+     # --
+     for (let ${1:item} of ${2:object}) {
+         $0
+     }
+   #+end_src
+
+** switch
+   #+begin_src snippet :tangle snippets/js-base-mode/switch
+     # -*- mode: snippet; require-final-newline: nil -*-
+     # name: switch
+     # key: sw
+     # --
+     switch (${1:condition}) {
+       case ${2:expression}:
+         $0
+         break;
+     }
+   #+end_src
 
 * python-mode
    #+BEGIN_SRC text :tangle snippets/python-mode/.yas-parents :shebang
