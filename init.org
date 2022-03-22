@@ -76,7 +76,9 @@
          company                                                           ; Dynamic completion previews through popup dialogs
          ;; command-log-mode                                               ; Echo commands as you enter them
          dashboard                                                         ; A feature full emacs dashboard
+         ;; dash                                                           ; Offline documentation browser using either dash or zeal
          ;; deft                                                           ; Note management system based on multiple org files
+         ;; devdocs                                                        ; Offline documentation browser
          ;; ebdb                                                           ; A contact management database for emacs
          ;; ebuku                                                          ; Interface to the, ebuku, bookmark manager
          engine-mode                                                       ; Run a search on a given search engine and view in brower
@@ -13199,6 +13201,15 @@
                             nil initial))))
      #+end_src
 
+**** consult-dash
+     #+begin_src emacs-lisp :tangle (package-yes! dash :consult)
+       (autoload 'consult-dash+ "+consult-custom.el" nil t)
+     #+end_src
+
+     #+begin_src emacs-lisp
+  
+     #+end_src
+
 **** consult-extensions-eob
      #+BEGIN_SRC emacs-lisp
        (provide '+consult-custom)
@@ -14110,6 +14121,30 @@
          "e" (dashboard-defun-shortcut-function+ #'dashboard-jump-to-registers)
          "a" (dashboard-defun-shortcut-function+ #'dashboard-jump-to-agenda)))
     #+END_SRC
+
+** dash
+   :PROPERTIES:
+   :header-args+: :tangle (package-yes! dash)
+   :END:
+
+   Dash (and its derivative zeal) are offline documentation browsers. They provide
+   access to API documentation that can be downloaded and stored locally for offline
+   viewing.
+
+   #+begin_src emacs-lisp
+     (use-package dash-docs
+       :straight t
+       )
+
+     (use-package zeal-at-point
+       :straight t
+       ;; Note: If you want MacOS, try `dash-at-point'.
+       :when (or (windows-p) (unix-p))
+       :custom
+       (dash-docs-docsets-path
+        (join-path (xdg-data-home) "Zeal/Zeal/docsets"))
+       )
+   #+end_src
 
 ** deft
    Note taking management solution for emacs.
